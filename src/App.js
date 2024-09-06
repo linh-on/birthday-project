@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-import PhotoGallery from "./PhotoGallery";
 import MemoryTimeline from "./MemoryTimeline";
 import confetti from "canvas-confetti"; // Import the confetti library
 
 function App() {
   const [showContent, setShowContent] = useState(false);
+  const [showCard, setShowCard] = useState(false);
 
   const handleClick = () => {
     setShowContent(true);
@@ -19,6 +19,10 @@ function App() {
       spread: 70,
       origin: { y: 0.6 }, // Adjust the launch position
     });
+  };
+
+  const openCard = () => {
+    setShowCard(true);
   };
 
   return (
@@ -35,8 +39,18 @@ function App() {
         </div>
       ) : (
         <div className="content">
-          <PhotoGallery />
           <MemoryTimeline />
+          {!showCard ? (
+            <button onClick={openCard} className="open-card-button">
+              Open Birthday Card
+            </button>
+          ) : (
+            <div className="birthday-card">
+              <p className="birthday-wish">
+                Happy Birthday! 🎉 May your year be filled with joy and success!
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>

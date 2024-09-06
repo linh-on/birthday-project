@@ -1,22 +1,22 @@
 import React from "react";
 
 const MemoryTimeline = () => {
-  const memories = [
-    { year: "2020", description: "First time we met" },
-    { year: "2021", description: "Amazing birthday celebration" },
-    { year: "2022", description: "Our trip to the mountains" },
-    // Add more memories
-  ];
-
   return (
     <div className="memory-timeline">
       <h2>Memory Timeline</h2>
       <ul>
-        {memories.map((memory, index) => (
-          <li key={index}>
-            <strong>{memory.year}</strong>: {memory.description}
-          </li>
-        ))}
+        <li>
+          <strong>2020:</strong> First time we met <br />
+          <img src="memory1.jpg" alt="Memory 1" />
+        </li>
+        <li>
+          <strong>2021:</strong> Amazing birthday celebration <br />
+          <img src="memory2.jpg" alt="Memory 2" />
+        </li>
+        <li>
+          <strong>2022:</strong> Our trip to the mountains <br />
+          <img src="memory3.jpg" alt="Memory 3" />
+        </li>
       </ul>
     </div>
   );
