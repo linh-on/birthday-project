@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Heart from "react-animated-heart";
 
 const MemoryTimeline = () => {
-  const [isClick, setClick] = useState(Array(14).fill(false)); 
+  const [isClick, setClick] = useState(Array(14).fill(false));
 
   const handleHeartClick = (index) => {
     const updatedClicks = [...isClick];
@@ -27,7 +27,6 @@ const MemoryTimeline = () => {
 
   return (
     <div className="memory-timeline">
-      <h1>Happy Birthday Như nhé!</h1>
       <h2>
         Đây là gallery hình chúng ta mà em chắc chắn ko đc đăng lên insta 🥲
       </h2>

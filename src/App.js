@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 import MemoryTimeline from "./MemoryGallery.js";
 import confetti from "canvas-confetti";
@@ -6,6 +6,7 @@ import confetti from "canvas-confetti";
 function App() {
   const [showContent, setShowContent] = useState(false);
   const [showCard, setShowCard] = useState(false);
+  const audioRef = useRef(null); // Reference to the audio element
 
   const handleClick = () => {
     setShowContent(true);
@@ -22,10 +23,17 @@ function App() {
 
   const openCard = () => {
     setShowCard(true);
+    if (audioRef.current) {
+      audioRef.current.play(); // Play the song when the card is opened
+    }
   };
 
   const closeCard = () => {
-    setShowCard(false); // Close the card when clicking the close button
+    setShowCard(false);
+    if (audioRef.current) {
+      audioRef.current.pause(); // Stop the song when the card is closed
+      audioRef.current.currentTime = 0; // Reset the song to the beginning
+    }
   };
 
   return (
@@ -46,11 +54,11 @@ function App() {
             <div className="birthday-card-container">
               {!showCard ? (
                 <button onClick={openCard} className="open-card-button">
-                  HAPPY BIRTHDAY ✉️
+                  HAPPY BIRTHDAY NHƯ NHÉ !! ✉️
                 </button>
               ) : (
                 <div className="birthday-card birthday-card-container">
-                  <p className="happy-birthday">HAPPY BIRTHDAY</p>
+                  <p className="happy-birthday">HAPPY BIRTHDAY NHƯ 🥳</p>
                   <p className="birthday-wish">
                     Chúc mừng chị đã vượt qua ba năm tam tai và tới tuổi 24 tuổi
                     nhé! 🥳 Tuổi mới em chúc chị sẽ luôn vui vẻ nè, hạnh phúc
@@ -77,6 +85,15 @@ function App() {
             <MemoryTimeline />
           </div>
         </div>
+      )}
+      {showCard && (
+        <iframe
+          className="hidden-video"
+          src="https://www.youtube.com/embed/Wu8NeFXaoOc?autoplay=1&start=18"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       )}
     </div>
   );
