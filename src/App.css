@@ -204,7 +204,7 @@ body {
 
 .birthday-card {
   margin-top: 20px;
-  padding: 10px;
+  padding: 15px;
   background-color: #ff6f61;
   border-radius: 10px;
   width: 80%;
@@ -215,21 +215,39 @@ body {
   align-items: center;
 }
 
+.close-card-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #d9534f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.close-card-button:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
+
 .happy-birthday {
-  margin: 0; /* Adjust the top and bottom margin */
+  margin: 0;
   padding: 0;
   font-size: 24px;
   font-weight: 600;
-  color: #333;
+  color: white;
   text-align: center;
 }
 
 .birthday-wish {
-  margin: 5px 0; /* Adjust the top and bottom margin */
+  margin: 5px 0;
   padding: 0;
   font-size: 18px;
   font-weight: 400;
-  color: #333;
+  color: white;
   text-align: center;
 }
 
