@@ -6,7 +6,7 @@ import confetti from "canvas-confetti";
 function App() {
   const [showContent, setShowContent] = useState(false);
   const [showCard, setShowCard] = useState(false);
-  const audioRef = useRef(null); // Reference to the audio element
+  const audioRef = useRef(null);
 
   const handleClick = () => {
     setShowContent(true);
@@ -24,15 +24,15 @@ function App() {
   const openCard = () => {
     setShowCard(true);
     if (audioRef.current) {
-      audioRef.current.play(); // Play the song when the card is opened
+      audioRef.current.play();
     }
   };
 
   const closeCard = () => {
     setShowCard(false);
     if (audioRef.current) {
-      audioRef.current.pause(); // Stop the song when the card is closed
-      audioRef.current.currentTime = 0; // Reset the song to the beginning
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     }
   };
 
@@ -40,9 +40,8 @@ function App() {
     <div className="App">
       {!showContent ? (
         <div className="intro main-container">
-          <p className="message">HAPPY BIRTHDAY!!</p>
           <p className="message">
-            Đây sẽ là card sinh nhật của em trong năm nay nhé!! ❤️
+            HAPPY BIRTHDAY!! CHÚC CHỊ NĂM 24 TUỔI THẬT VUI VẺ !!
           </p>
           <button onClick={handleClick} className="click-me-button">
             Click Me
