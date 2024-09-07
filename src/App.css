@@ -66,6 +66,14 @@ body {
   background-color: #ffffff;
 }
 
+img {
+  margin-top: 10px;
+}
+
+strong {
+  font-size: x-large;
+}
+
 .categories {
   display: flex;
   flex-direction: row;

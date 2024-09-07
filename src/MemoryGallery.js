@@ -24,7 +24,7 @@ const MemoryTimeline = () => {
 
   return (
     <div className="memory-timeline">
-      <h2>Our Memory Gallery</h2>
+      <h1>Our Memory Gallery</h1>
       <ul>
         <li>
           <strong>First selfie</strong> <br />
@@ -72,19 +72,25 @@ const MemoryTimeline = () => {
         </li>
 
         <li>
-          <strong>San Francisco Trip </strong> <br />
+          <strong>San Francisco</strong> <br />
           <img src="san-francisco.jpg" alt="Memory 5" />
           <Heart isClick={isClick[4]} onClick={() => handleHeartClick(4)} />
         </li>
         <li>
-          <strong>Las Vegas Trip</strong> <br />
+          <strong>Las Vegas</strong> <br />
           <img src="las-vegas.jpg" alt="Memory 2" />
           <Heart isClick={isClick[1]} onClick={() => handleHeartClick(1)} />
         </li>
         <li>
-          <strong>San Jose Trip </strong>
+          <strong>San Jose</strong>
           <br />
           <img src="san-jose.jpg" alt="Memory 3" />
+          <Heart isClick={isClick[2]} onClick={() => handleHeartClick(2)} />
+        </li>
+        <li>
+          <strong>Vũng Tàu</strong>
+          <br />
+          <img src="vung-tau.jpg" alt="Memory 3" />
           <Heart isClick={isClick[2]} onClick={() => handleHeartClick(2)} />
         </li>
       </ul>
