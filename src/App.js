@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import MemoryTimeline from "./MemoryTimeline";
-import confetti from "canvas-confetti"; // Import the confetti library
+import MemoryTimeline from "./MemoryGallery.js";
+import confetti from "canvas-confetti";
 
 function App() {
   const [showContent, setShowContent] = useState(false);
@@ -9,15 +9,14 @@ function App() {
 
   const handleClick = () => {
     setShowContent(true);
-    launchConfetti(); // Call the confetti function on button click
+    launchConfetti();
   };
 
-  // Function to launch the confetti
   const launchConfetti = () => {
     confetti({
       particleCount: 100,
       spread: 70,
-      origin: { y: 0.6 }, // Adjust the launch position
+      origin: { y: 0.6 },
     });
   };
 
@@ -28,29 +27,50 @@ function App() {
   return (
     <div className="App">
       {!showContent ? (
-        <div className="intro">
+        <div className="intro main-container">
+          <p className="message">HAPPY BIRTHDAY!!</p>
           <p className="message">
-            Hi, it's your birthday, click me to find out what your friend
-            prepared for you!
+            Đây sẽ là card sinh nhật của em trong năm nay nhé!! ❤️
           </p>
           <button onClick={handleClick} className="click-me-button">
             Click Me
           </button>
         </div>
       ) : (
-        <div className="content">
-          <MemoryTimeline />
-          {!showCard ? (
-            <button onClick={openCard} className="open-card-button">
-              Open Birthday Card
-            </button>
-          ) : (
-            <div className="birthday-card">
-              <p className="birthday-wish">
-                Happy Birthday! 🎉 May your year be filled with joy and success!
-              </p>
-            </div>
-          )}
+        <div>
+          <div className="main-container">
+            <MemoryTimeline />
+          </div>
+
+          {/* Birthday card outside and centered */}
+          <div className="birthday-card-container">
+            {!showCard ? (
+              <button onClick={openCard} className="open-card-button">
+                ✉️
+              </button>
+            ) : (
+              <div className="birthday-card birthday-card-container">
+                <p className="happy-birthday">HAPPY BIRTHDAY</p>
+                <p className="birthday-wish">
+                  Chúc mừng chị đã vượt qua ba năm tam tai và tới tuổi 24 tuổi
+                  nhé! 🥳 Tuổi mới em chúc chị sẽ luôn vui vẻ nè, hạnh phúc nè,
+                  và đạt được thật nhiều thành công nhé! Em mong là chị sẽ được
+                  nhận vô trường chị muốn, làm chủ đề chị thích và sau này sẽ
+                  thành công và giúp đỡ nhiều người khác! Nhưng mà em tin là 1
+                  người tài giỏi và nỗ lực như chị thì chị sẽ đạt được điều chị
+                  mong muốn thui 😙
+                </p>
+                <p className="birthday-wish">
+                  Lý do mà em làm 1 cái memory gallery là gì? Là tại khi em đi
+                  tìm hình mỗi năm thì em cảm thấy mình thật sự ko có hình luôn,
+                  mỗi năm là càng ít hình đi T^T Năm sau em tốt nghiệp rồi và em
+                  cũng ko biết là em đi đâu về đâu nên em mong là mình có thể đi
+                  chơi và chụp hình kỷ niệm với nhau nhiều hơn nè. Mong là nếu
+                  lần sau em chọn hình thì sẽ nhiều hình hơn nữa nhé!!
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

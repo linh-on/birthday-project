@@ -1,4 +1,5 @@
-.App, .content {
+.App,
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +49,21 @@
   padding: 20px;
   max-width: 800px;
   width: 100%;
-  min-height: 100vh; /* Ensure full height to enable vertical centering */
+  min-height: 100vh;
+}
+
+.main-container {
+  background-color: #fff8e1;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: auto;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+body {
+  background-color: #ffffff;
 }
 
 .categories {
@@ -120,13 +135,24 @@ body {
 .memory-timeline ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .memory-timeline li {
   background-color: #ffe4c4;
-  margin: 10px 0;
+  margin: 0;
   padding: 10px;
   border-radius: 5px;
+  flex: 1;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .memory-timeline ul {
+    flex-direction: column;
+  }
 }
 
 .click-me-button {
@@ -163,26 +189,46 @@ body {
   transform: scale(1.05);
 }
 
+.birthday-card-container {
+  text-align: center;
+  margin: 20px auto;
+}
+
 .birthday-card {
-  margin-top: 30px;
-  padding: 20px;
-  border: 2px solid #ffe4c4;
-  background-color: #fff8e1;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ff6f61;
   border-radius: 10px;
-  width: 60%;
+  width: 80%;
   max-width: 600px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 3s ease-in-out;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.birthday-wish {
+.happy-birthday {
+  margin: 0; /* Adjust the top and bottom margin */
+  padding: 0;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
   text-align: center;
+}
+
+.birthday-wish {
+  margin: 5px 0; /* Adjust the top and bottom margin */
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+
+.memory-timeline img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 
 @keyframes fadeIn {
